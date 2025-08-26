@@ -36,7 +36,6 @@ export function ImageZoom({
   rmiz,
   ...props
 }: ImageZoomProps) {
-  console.log(111, props)
   return (
     <Zoom
       zoomMargin={20}

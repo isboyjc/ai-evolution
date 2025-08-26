@@ -1,7 +1,6 @@
 'use client';
 
 import { useEffect, useRef, useState, useCallback } from 'react';
-// import { useTheme } from 'next-themes';
 
 interface TextPressureProps {
     text?: string;
@@ -198,7 +197,7 @@ const TextPressure: React.FC<TextPressureProps> = ({
         return () => cancelAnimationFrame(rafId);
     }, [width, weight, italic, alpha, chars.length]);
 
-    const dynamicClassName = [className, flex ? 'flex' : '', stroke ? 'stroke' : '']
+    const dynamicClassName = [className, flex ? 'flex-style' : '', stroke ? 'stroke' : '']
         .filter(Boolean)
         .join(' ');
 
@@ -219,7 +218,7 @@ const TextPressure: React.FC<TextPressureProps> = ({
           font-style: normal;
         }
 
-        .flex {
+        .flex-style {
           display: flex;
           justify-content: space-between;
         }

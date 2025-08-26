@@ -1,7 +1,0 @@
-ignoredBuiltDependencies:
-  - esbuild
-  - sharp
-  - unrs-resolver
-
-onlyBuiltDependencies:
-  - '@tailwindcss/oxide'
