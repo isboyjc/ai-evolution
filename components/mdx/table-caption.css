@@ -1,0 +1,46 @@
+/* 当表格容器后面有批注时，去掉容器的下边距 */
+div:has(> table):has(+ p em),
+.my-6:has(> table):has(+ p em),
+.my-6:has(> .overflow-x-auto > table):has(+ p em) {
+  margin-bottom: 0 !important;
+}
+
+/* 表格后紧跟的斜体文本样式化为批注 */
+/* 支持table直接相邻或者table被div包装的情况 */
+table + p > em,
+table + p:has(em:only-child),
+div:has(> table) + p > em,
+div:has(> table) + p:has(em:only-child) {
+  display: block;
+  text-align: center;
+  font-size: 0.875rem;
+  color: #6b7280;
+  margin-top: 2px;
+  margin-bottom: 1.5rem;
+  font-style: italic;
+}
+
+/* 如果整个段落只有一个em元素，将段落也居中 */
+table + p:has(em:only-child),
+div:has(> table) + p:has(em:only-child) {
+  text-align: left;
+  font-size: 0.875rem;
+  color: #6b7280;
+  margin-top: 2px;
+  margin-bottom: 1.5rem;
+}
+
+/* 兼容性处理：对于不支持:has()的浏览器 */
+@supports not (selector(:has(em))) {
+  /* 表格后面的段落，如果开头是斜体 */
+  table + p em:first-child:last-child,
+  /* 也处理div包装的情况，用更通用的选择器 */
+  .overflow-x-auto + p em:first-child:last-child {
+    display: block;
+    text-align: left;
+    font-size: 0.875rem;
+    color: #6b7280;
+    margin-top: 2px;
+    margin-bottom: 1.5rem;
+  }
+}

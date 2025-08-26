@@ -1,0 +1,23 @@
+{
+  "title": "人工智能75年",
+  "description": "介绍人工智能75年进化史",
+  "root": true,
+  "icon": "Brain",
+  "pages": [
+    "---导读---",
+    "index",
+    "---正文---",
+    "01",
+    "02",
+    "03",
+    "04",
+    "05",
+    "06",
+    "07",
+    "summary-of-the-book",
+    "---其他---",
+    "postscript",
+    "appendix",
+    "references"
+  ]
+}
