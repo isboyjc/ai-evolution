@@ -25,4 +25,5 @@ export default defineConfig({
     remarkPlugins: [remarkMath],
     rehypePlugins: (v) => [rehypeKatex, ...v],
   },
+  lastModifiedTime: 'git'
 });
