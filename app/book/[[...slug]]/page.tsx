@@ -21,6 +21,7 @@ export default async function Page(props: PageProps<'/book/[[...slug]]'>) {
     <DocsPage 
       editOnGithub={{
         owner: 'isboyjc',
+        sha: 'main',
         repo: 'ai-evolution',
         path: '/content/book/' + page.path,
       }} 
