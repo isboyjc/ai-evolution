@@ -1,10 +1,3 @@
-/*
- * @LastEditTime: 2025-08-27 02:30:35
- * @Description: ...
- * @Date: 2025-08-27 01:55:59
- * @Author: isboyjc
- * @LastEditors: isboyjc
- */
 import { source } from '@/lib/source';
 import {
   DocsBody,
@@ -16,8 +9,9 @@ import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { createRelativeLink } from 'fumadocs-ui/mdx';
 import { getMDXComponents } from '@/mdx-components';
+import Hero from '@/components/Hero';
 
-export default async function Page(props: PageProps<'/docs/[[...slug]]'>) {
+export default async function Page(props: PageProps<'/book/[[...slug]]'>) {
   const params = await props.params;
   const page = source.getPage(params.slug);
   if (!page) notFound();
@@ -39,6 +33,11 @@ export default async function Page(props: PageProps<'/docs/[[...slug]]'>) {
         header: <div></div>,
         footer: <div></div>
       }}
+      footer={
+        {
+          component: <div></div>
+        }
+      }
     >
       <DocsTitle>{page.data.title}</DocsTitle>
       <DocsDescription>{page.data.description}</DocsDescription>
@@ -59,7 +58,7 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata(
-  props: PageProps<'/docs/[[...slug]]'>,
+  props: PageProps<'/book/[[...slug]]'>,
 ): Promise<Metadata> {
   const params = await props.params;
   const page = source.getPage(params.slug);

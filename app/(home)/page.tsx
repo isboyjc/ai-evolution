@@ -1,17 +1,13 @@
-import Link from 'next/link';
-import Hero from './components/Hero';
+// import { HomeLayout } from 'fumadocs-ui/layouts/home';
+// import { baseOptions } from '@/lib/layout.shared';
 
-export default function HomePage() {
-  return (
-    <main className="flex flex-col items-center justify-center">
-      <Hero />
+import { redirect } from "next/navigation";
 
-      <Link
-        href="/book"
-        className="text-fd-foreground font-semibold underline"
-      >
-        点击阅读
-      </Link>
-    </main>
-  );
+// export default function Layout({ children }: LayoutProps<'/'>) {
+//   return <HomeLayout {...baseOptions()}>{children}</HomeLayout>;
+// }
+
+
+export default function Home() {
+  redirect('/book');
 }
