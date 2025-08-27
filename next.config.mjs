@@ -19,3 +19,6 @@ const config = {
 };
 
 export default withMDX(config);
+
+import { initOpenNextCloudflareForDev } from "@opennextjs/cloudflare";
+initOpenNextCloudflareForDev();
