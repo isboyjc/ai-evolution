@@ -33,11 +33,6 @@ export default async function Page(props: PageProps<'/book/[[...slug]]'>) {
         header: <div></div>,
         footer: <div></div>
       }}
-      footer={
-        {
-          component: <div></div>
-        }
-      }
     >
       <DocsTitle>{page.data.title}</DocsTitle>
       <DocsDescription>{page.data.description}</DocsDescription>
