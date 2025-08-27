@@ -9,7 +9,6 @@ import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { createRelativeLink } from 'fumadocs-ui/mdx';
 import { getMDXComponents } from '@/mdx-components';
-import Hero from '@/components/Hero';
 
 export default async function Page(props: PageProps<'/book/[[...slug]]'>) {
   const params = await props.params;
@@ -23,7 +22,7 @@ export default async function Page(props: PageProps<'/book/[[...slug]]'>) {
       editOnGithub={{
         owner: 'isboyjc',
         repo: 'ai-evolution',
-        path: page.path,
+        path: '/content/book/' + page.path,
       }} 
       toc={page.data.toc} 
       full={page.data.full} 
